@@ -1,0 +1,16 @@
+services:
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: mailcatcher
+    ports:
+      - '1080:1080'
+      - '1025:1025'
+    networks:
+      - default
+      - fundely_default #ファンデリーのネットワーク名
+      - tools_default #ミールタイムのネットワーク名
+networks:
+  fundely_default:
+    external: true
+  tools_default:
+    external: true
